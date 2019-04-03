@@ -1,0 +1,19 @@
+<div class="answers-list">
+  <div class="answer" *ngFor="let answer of data.answersList;let index = index">
+    <div class="h-info">
+      <p class="q-index">Answer - {{index+1}}</p>
+      <p class="a-created-at">Created At : <span>{{answer.created_at}}</span></p>
+      <p class="a-created-by">Created By :
+        <span>{{answer.created_by?.Id ? answer.created_by.Name +'  '+ answer.created_by.Surname : answer.created_by}}</span>
+      </p>
+    </div>
+    <div class="a-text">
+      <p class="a-text" [innerHTML]="answer.Answer"></p>
+    </div>
+  </div>
+  <div class="add-answer">
+    <textarea cols="3" placeholder="Add Answer" [(ngModel)]="answer"></textarea>
+    <button class="primary-button" (click)="onAddAnswer()">Add</button>
+    <div class="error" *ngIf="invalidAnswer && !answer">Please enter answer</div>
+  </div>
+</div>

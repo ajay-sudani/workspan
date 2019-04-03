@@ -1,0 +1,14 @@
+<div mat-card-avatar class="header" *ngIf="data">
+  <p class="q-index">Question {{index ? index : ''}}</p>
+  <div class="icons">
+    <div class="upvotes">
+      <img src="../../assets/images/thumbs-up.png" (click)="onUpvote(data)" />
+      <strong>{{data.upvotes}}</strong>
+    </div>
+    <div class="downvotes">
+      <img src="../../assets/images/dislike.png" (click)="onDownvote(data)" />
+      <strong>{{data.downvotes}}</strong>
+    </div>
+  </div>
+  <p class=" q-text" [innerHTML]="data.Text"></p>
+</div>

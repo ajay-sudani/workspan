@@ -1,0 +1,18 @@
+<div class="feed-container">
+  <div class="go-to-list">
+    <button class="primary-button" (click)="goToListPage()">All List</button>
+  </div>
+  <div class="card" *ngIf="question;else loading">
+    <mat-card class="feed-card">
+      <mat-card-header>
+        <app-question [data]="question" [index]="index+1"></app-question>
+      </mat-card-header>
+      <mat-card-content>
+        <app-answers [data]="question"></app-answers>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <ng-template #loading>
+    <div class="loading">Loading...</div>
+  </ng-template>
+</div>

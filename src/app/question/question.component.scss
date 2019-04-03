@@ -1,0 +1,40 @@
+.header {
+    border-top-right-radius: 10px;
+    color: #868686;
+    background-color: #f0f1f1;
+    padding: 15px;
+    .q-index {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    .q-text {
+        font-size: 16px;
+    }
+    .icons {
+        display: flex;
+        position: absolute;
+        right: 25px;
+        text-align: 0;
+        top: 5px;
+        img {
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+        }
+        .upvotes,
+        .downvotes {
+            display: flex;
+            align-items: center;
+        }
+        .upvotes {
+            margin-right: 20px;
+        }
+        strong {
+            margin-left: 5px;
+        }
+    }
+}
+
+.mat-card-header-text {
+    display: none;
+}

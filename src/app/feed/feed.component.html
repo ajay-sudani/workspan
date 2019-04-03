@@ -1,0 +1,17 @@
+<div class="feed-container">
+  <div class="card" *ngFor="let question of data;let index = index">
+    <mat-card class="feed-card">
+      <mat-card-header>
+        <app-question [data]="question" [index]="index+1"></app-question>
+        <div class="options">
+          <button class="primary-button answers-btn"
+            (click)="question.toggleAnswer = !question.toggleAnswer">Answers</button>
+          <button class="primary-button" (click)="goToDetailsPage(question.Id)">Details</button>
+        </div>
+      </mat-card-header>
+      <mat-card-content>
+        <app-answers *ngIf="question.toggleAnswer" [data]="question"></app-answers>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
